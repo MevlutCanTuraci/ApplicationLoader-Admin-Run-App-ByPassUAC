@@ -1,0 +1,38 @@
+sc.exe create "Svc Name" binpath="C:\Path\To\App.exe --contentRoot C:\Windows\System32"
+
+Servis failture ayarları için;
+
+sc.exe failure "Service Name" reset=0 actions=restart/60000/restart/60000/restart/60000
+
+sc config "Demo Service" start= disabled
+
+
+Servis açıklaması için;
+
+sc description "Demo Service" "Runs diagnostic of service control."
+
+
+
+sc.exe create "Demo Service" binpath="C:\Users\DELL\Desktop\SampleSelfUpdatingWindowsService-master\ServiceTesting\bin\Debug\ServiceTesting.exe --contentRoot C:\Windows\System32" start=auto
+
+sc description "Demo Service" "Runs diagnostic of service control."
+
+sc.exe failure "Demo Service" reset=0 actions=restart/60000/restart/60000/restart/60000
+
+sc config "Demo Service" start= disabled
+
+sc create "Demo Service" binPath="C:\Users\DELL\Desktop\SampleSelfUpdatingWindowsService-master\ServiceTesting\bin\Debug\ServiceTesting.exe --contentRoot C:\Windows\System32" --service -r "C:\SVN_Repository" start= auto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
